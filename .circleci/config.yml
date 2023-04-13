@@ -10,7 +10,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: pip install pylint
+      - run: pip3 install pylint
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
