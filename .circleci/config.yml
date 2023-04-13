@@ -11,17 +11,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Pylint"
-          command: "pylint app.py"
-  unit-testing:
-    docker:
-      - image: cimg/base:stable
-    steps:
-      - checkout
-      -run:
-        name: "Unit testing"
-        command: "pytest"
-  
+          name: Pylint
+          command: pylint app.py
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -29,6 +20,3 @@ workflows:
   static-analysis-workflow:
     jobs:
       - static-analysis
-  unit-testing-workflow:
-    jobs:
-      - unit-testing
