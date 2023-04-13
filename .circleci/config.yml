@@ -20,3 +20,4 @@ jobs:
       - run:
           name: Run tests
           command: pytest && pylint app.py && pylint bmi_calculator.py
+      - coveralls/upload
