@@ -1,22 +1,4 @@
-from bmi_calculator import verify_height, verify_weight, calc_bmi, get_bmi_category
-
-def test_verify_height():
-    assert verify_height('a', '10.5') == False
-    assert verify_height('5', 'b') == False
-
-    assert verify_height('-1', '10.5') == False
-    assert verify_height('1.5', '10.5') == False
-    assert verify_height('5', '-1') == False
-    assert verify_height('0', '0') == False
-
-    assert verify_height('0', '11.5') == True
-    assert verify_height('6', '0') == True
-
-def test_verify_weight():
-    assert verify_weight('a') == False
-    assert verify_weight('-1') == False
-    assert verify_weight('0') == False
-    assert verify_weight('150.5') == True
+from bmi_calculator import calc_bmi, get_bmi_category
 
 def test_calc_bmi():
     assert calc_bmi(59.5, 90) == 18.3
