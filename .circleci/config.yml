@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   python: circleci/python@2.1.1
-  coveralls: coveralls/coveralls@2.1.0
 
 workflows:
   build-and-test:
@@ -19,5 +18,4 @@ jobs:
           pkg-manager: pip
       - run:
           name: Run tests
-          command: pytest && pylint app.py && pylint bmi_calculator.py
-      - coveralls/upload
+          command: pytest && pylint app.py && pylint bmi_calculator.py && coveralls
