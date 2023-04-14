@@ -23,7 +23,7 @@ class BmiForm(FlaskForm):
     def validate(self, extra_validators = None):
         is_valid = True
         if not FlaskForm.validate(self):
-            is_valid = False
+            return False
 
         # Validate positive height
         if self.feet.data == 0 and self.inches.data == 0:
